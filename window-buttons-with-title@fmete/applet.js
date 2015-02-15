@@ -208,6 +208,12 @@ WindowButtonApplet.prototype = {
            		this._move();
            	        return true;
            	}
+           	
+           	// install wmctrl
+           	else if(this.titleButtonAction==5) {
+           		GLib.spawn_command_line_async('wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz');
+           	}
+           	
            	else {
            		return true;
            	} 
